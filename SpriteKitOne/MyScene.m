@@ -6,12 +6,14 @@
 //  Copyright (c) 2014 Monson. All rights reserved.
 //
 
+#import "GameOverScene.h"
 #import "MyScene.h"
 // 1
 @interface MyScene () <SKPhysicsContactDelegate>
 @property (nonatomic) SKSpriteNode * player;
 @property (nonatomic) NSTimeInterval lastSpawnTimeInterval;
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
+@property (nonatomic) int monstersDestroyed;
 @end
 
 static const uint32_t projectileCategory     =  0x1 << 0;
@@ -97,7 +99,12 @@ static inline CGPoint rwNormalize(CGPoint a) {
     // Create the actions
     SKAction * actionMove = [SKAction moveTo:CGPointMake(-monster.size.width/2, actualY) duration:actualDuration];
     SKAction * actionMoveDone = [SKAction removeFromParent];
-    [monster runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
+    SKAction * loseAction = [SKAction runBlock:^{
+        SKTransition *reveal = [SKTransition flipHorizontalWithDuration:0.5];
+        SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size won:NO];
+        [self.view presentScene:gameOverScene transition: reveal];
+    }];
+    [monster runAction:[SKAction sequence:@[actionMove, loseAction, actionMoveDone]]];
     
 }
 
@@ -150,6 +157,8 @@ static inline CGPoint rwNormalize(CGPoint a) {
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
+    [self runAction:[SKAction playSoundFileNamed:@"pew-pew-lei.caf" waitForCompletion:NO]];
+    
     // 1 - Choose one of the touches to work with
     UITouch * touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
@@ -197,6 +206,13 @@ static inline CGPoint rwNormalize(CGPoint a) {
     NSLog(@"Hit");
     [projectile removeFromParent];
     [monster removeFromParent];
+    
+    self.monstersDestroyed++;
+    if (self.monstersDestroyed > 30) {
+        SKTransition *reveal = [SKTransition flipHorizontalWithDuration:0.5];
+        SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size won:YES];
+        [self.view presentScene:gameOverScene transition: reveal];
+    }
 }
 
 

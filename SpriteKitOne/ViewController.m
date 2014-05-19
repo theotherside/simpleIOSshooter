@@ -6,14 +6,28 @@
 //  Copyright (c) 2014 Monson. All rights reserved.
 //
 
+#import <AVFoundation/AVAudioPlayer.h>
 #import "ViewController.h"
 #import "MyScene.h"
+
+@interface ViewController ()
+@property (nonatomic) AVAudioPlayer * backgroundMusicPlayer;
+@end
 
 @implementation ViewController
 
 - (void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
+    
+    
+    NSError *error;
+    NSURL * backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"background-music-aac" withExtension:@"caf"];
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    self.backgroundMusicPlayer.numberOfLoops = -1;
+    [self.backgroundMusicPlayer prepareToPlay];
+    [self.backgroundMusicPlayer play];
+    
     
     // Configure the view.
     SKView * skView = (SKView *)self.view;

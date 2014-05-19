@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		032107E319266A7A00D15F51 /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 032107E219266A7A00D15F51 /* truck.png */; };
-		032107E919269BA600D15F51 /* ame.png in Resources */ = {isa = PBXBuildFile; fileRef = 032107E819269BA600D15F51 /* ame.png */; };
 		032107EB1926A1BF00D15F51 /* AMM.png in Resources */ = {isa = PBXBuildFile; fileRef = 032107EA1926A1BF00D15F51 /* AMM.png */; };
 		032107ED1926A2DC00D15F51 /* fs.png in Resources */ = {isa = PBXBuildFile; fileRef = 032107EC1926A2DC00D15F51 /* fs.png */; };
 		0370BF921925127B00F338D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0370BF911925127B00F338D4 /* Foundation.framework */; };
@@ -31,6 +29,8 @@
 		0370BFD2192513BB00F338D4 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 0370BFCF192513BB00F338D4 /* background-music-aac.caf */; };
 		0370BFD3192513BB00F338D4 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = 0370BFD0192513BB00F338D4 /* pew-pew-lei.caf */; };
 		0370BFD4192513BB00F338D4 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 0370BFD1192513BB00F338D4 /* sprites.atlas */; };
+		03BDE8F8192A7242006E055E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BDE8F7192A7242006E055E /* AVFoundation.framework */; };
+		03FA6818192A761D0014C293 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FA6817192A761D0014C293 /* GameOverScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		032107E219266A7A00D15F51 /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
-		032107E819269BA600D15F51 /* ame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ame.png; sourceTree = "<group>"; };
 		032107EA1926A1BF00D15F51 /* AMM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AMM.png; sourceTree = "<group>"; };
 		032107EC1926A2DC00D15F51 /* fs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fs.png; sourceTree = "<group>"; };
 		0370BF8E1925127B00F338D4 /* SpriteKitOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKitOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +72,9 @@
 		0370BFCF192513BB00F338D4 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		0370BFD0192513BB00F338D4 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		0370BFD1192513BB00F338D4 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		03BDE8F7192A7242006E055E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		03FA6816192A761D0014C293 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = ../GameOverScene.h; sourceTree = "<group>"; };
+		03FA6817192A761D0014C293 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverScene.m; path = ../GameOverScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03BDE8F8192A7242006E055E /* AVFoundation.framework in Frameworks */,
 				0370BF941925127B00F338D4 /* CoreGraphics.framework in Frameworks */,
 				0370BF961925127B00F338D4 /* UIKit.framework in Frameworks */,
 				0370BF981925127B00F338D4 /* SpriteKit.framework in Frameworks */,
@@ -123,6 +125,7 @@
 		0370BF901925127B00F338D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03BDE8F7192A7242006E055E /* AVFoundation.framework */,
 				0370BF911925127B00F338D4 /* Foundation.framework */,
 				0370BF931925127B00F338D4 /* CoreGraphics.framework */,
 				0370BF951925127B00F338D4 /* UIKit.framework */,
@@ -141,13 +144,13 @@
 				0370BFA51925127B00F338D4 /* Main.storyboard */,
 				0370BFA81925127B00F338D4 /* ViewController.h */,
 				0370BFA91925127B00F338D4 /* ViewController.m */,
+				03FA6816192A761D0014C293 /* GameOverScene.h */,
+				03FA6817192A761D0014C293 /* GameOverScene.m */,
 				0370BFAB1925127B00F338D4 /* MyScene.h */,
 				0370BFAC1925127B00F338D4 /* MyScene.m */,
 				0370BFAE1925127B00F338D4 /* Spaceship.png */,
-				032107E819269BA600D15F51 /* ame.png */,
 				032107EA1926A1BF00D15F51 /* AMM.png */,
 				032107EC1926A2DC00D15F51 /* fs.png */,
-				032107E219266A7A00D15F51 /* truck.png */,
 				0370BFB01925127B00F338D4 /* Images.xcassets */,
 				0370BF9A1925127B00F338D4 /* Supporting Files */,
 			);
@@ -281,11 +284,9 @@
 				0370BFD2192513BB00F338D4 /* background-music-aac.caf in Resources */,
 				032107ED1926A2DC00D15F51 /* fs.png in Resources */,
 				0370BF9E1925127B00F338D4 /* InfoPlist.strings in Resources */,
-				032107E919269BA600D15F51 /* ame.png in Resources */,
 				0370BFB11925127B00F338D4 /* Images.xcassets in Resources */,
 				032107EB1926A1BF00D15F51 /* AMM.png in Resources */,
 				0370BFAF1925127B00F338D4 /* Spaceship.png in Resources */,
-				032107E319266A7A00D15F51 /* truck.png in Resources */,
 				0370BFA71925127B00F338D4 /* Main.storyboard in Resources */,
 				0370BFD3192513BB00F338D4 /* pew-pew-lei.caf in Resources */,
 			);
@@ -306,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FA6818192A761D0014C293 /* GameOverScene.m in Sources */,
 				0370BFAD1925127B00F338D4 /* MyScene.m in Sources */,
 				0370BFAA1925127B00F338D4 /* ViewController.m in Sources */,
 				0370BFA41925127B00F338D4 /* AppDelegate.m in Sources */,
